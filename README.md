@@ -26,7 +26,7 @@
 
 📩 **レシピ投稿フォーム**（Googleフォーム）はこちら 👉 [準備中]
 
-📷 **Instagram（予定）** 👉 @jamfairys_kitchen
+📷 **Instagram（予定）** 👉 [@jamfairys_kitchen]　(https://www.instagram.com/jamfairys.kitchen/)
 
 ---
 
