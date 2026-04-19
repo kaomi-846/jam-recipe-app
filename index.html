@@ -280,7 +280,8 @@
 
     <footer style="margin-top: 30px; color: #5a4033; font-size: 0.95em">
       🍓このアプリは、ご家庭での手作りジャムや、販売を目指す方の試作の目安としてご利用いただくものです。<br />
-      🍓1本の内容量×瓶数で総量が決まる場合は、鍋の重さを「 0 」と、総量を入力して完成量としてください。 <br />
+      🍓1本の内容量×瓶数で総量が決まる場合は、鍋の重さを「 0
+      」と、総量を入力して完成量としてください。 <br />
       🍓実際に販売する際には、製造許可を受けた施設で作業を行い、必要な加熱殺菌や衛生管理を行ってください。<br />
       🍓また、販売前には必ず保健所や検査機関に相談し、法律に沿った表示を作成してください。<br />
       🍓本アプリで作成する内容はあくまで目安であり、ご利用はすべて自己責任でお願いいたします。<br /><br />
@@ -661,6 +662,18 @@
 
             if (data && data.ph) {
               ph = data.ph;
+            }
+            if (
+              ing.name.includes("レモン") ||
+              ing.name.includes("ライム") ||
+              ing.name.includes("ゆず") ||
+              ing.name.includes("すだち") ||
+              ing.name.includes("かぼす") ||
+              ing.name.includes("クエン酸") ||
+              ing.name.includes("リンゴ酸") ||
+              ing.name.includes("酢")
+            ) {
+              ph = ph + 0.8; // ←酸を弱める（数値調整）
             } else {
               // ingredientData にない場合
               if (ing.name.includes("クエン酸")) ph = 2.2;
@@ -843,7 +856,7 @@
         label += `<p>内容量：${displayAmount}g</p>`;
         label += `<p>保存方法：${storageText}</p>`;
         label += `<p>製造者：各自記入</p>`;
-        label += `<p>栄養成分（${displayAmount}g当たり 推定値）：</p>`;
+        label += `<p>栄養成分（100g当たり 推定値）：</p>`;
         label += `<p>エネルギー：${per100g.kcal} kcal</p>`;
         label += `<p>たんぱく質：${per100g.protein} g</p>`;
         label += `<p>脂質：${per100g.fat} g</p>`;
@@ -862,7 +875,7 @@
           )} を含みます。</p>`;
         label += `<hr><p style="color:#5a4033; font-size:0.9em;">;
 
-  
+
            🍓原材料と希望糖度を入力すると、必要な砂糖の量の目安やレシピが自動で算出され、一括表示も作成できる便利なツールです。<br>
            🍓本アプリを利用した際に生じたトラブルや事故について、製作者は一切の責任を負いません。<br>
            🍓販売を予定されている場合は、必ず保健所や関係機関に相談し、法令に基づく表示を行ってください。</p>`;
